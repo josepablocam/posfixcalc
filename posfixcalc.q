@@ -20,8 +20,8 @@ evaluate:{last {$[not isop y;x,y; (a _x),(ops y) . (a:neg argn y) sublist x]}/[(
 calc:{evaluate postfix stot (),x}; //calculator
 
 //some quick examples
-(-3+(1%2)+4*5)~calc"1 / 2 - 3 + 4 * 5"
-1000 ~ calc"1000"
-(3+1000*-2)~calc "1000 *-2 + 3"
-(-3+4-7)~calc"4 - 3 - 7"
-(1+2 xexp 2)~calc"2^2 +1"
+(-3+(1%2)+4*5)=calc"1 / 2 - 3 + 4 * 5"
+1000=calc"1000"
+(3+1000*-2)=calc "1000 *-2 + 3"
+(-3+4-7)=calc"4 - 3 - 7"
+(1+2 xexp 2)=calc"2^2 +1"
