@@ -9,7 +9,7 @@ ops:`minus`plus`times`div`exp!(-;+;*;%;xexp);
 isop:{type[`a]=type x};
 todigit:{(("IF") "." in x)$x};
 tokenize:{((syms `$;todigit) any each x in\:.Q.n)@'x}; //space separated to tokens
-stot:{raze tokenize string except[ ;helperwords] `$t:" "vs ssr[ ;"  ";" "]/[trim x]}; //strings to tokens, deals with extra spacing and negatives
+stot:{raze tokenize string except[ ;helperwords] `$t:" "vs (ssr[ ;"  ";" "]/)trim ssr/[x;("(";")");(" ( ";" ) ")]}; //strings to tokens, deals with extra spacing and negatives
 //standard infix->postfix translation algorithm, http://csis.pace.edu/~wolf/CS122/infix-postfix.htm
 conv:{  r:x[0]; os:x[1];
        $[not isop y;                      r:r,y; //a number, goes straight to our result list
